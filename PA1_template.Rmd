@@ -65,7 +65,7 @@ Calculate and report the total number of missing values in the dataset (i.e. the
 ```r
 missing <- sum(is.na(activity$steps))
 ```
-There are 'r missing' missing values.
+There are 2304 missing values.
 
 ## Replace NA's with Mean steps per interval
 
