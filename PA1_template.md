@@ -44,7 +44,7 @@ Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and 
 mInterval <- aggregate(steps ~ interval, activity, mean)
 ggplot(mInterval, aes(interval,steps)) + geom_line()
 ```
-![plot of chunk IntervalGraph](figure/IntervalGraph.png)
+![plot of chunk IntervalGraph](figure/Interval.png)
 
 ## 5 minute interval with max number of average steps
 
@@ -85,7 +85,7 @@ activity$steps <- apply(activity[,c("steps","interval")],1, function(y) fn(y["st
 dailySteps2 <- aggregate(steps ~ date, activity, sum)
 ggplot(activity,aes(date)) + geom_histogram(aes(weight=steps),binwidth=1)
 ```
-![plot of chunk Hist2](figure/Hist2.png) 
+![plot of chunk Hist2](figure/daylysteps.png) 
 ##New Mean and Median
 
 
@@ -131,4 +131,4 @@ CombMeans <- rbind(wkdMean,wkendMean)
 library(lattice)
 xyplot(steps ~ interval|dow, data = CombMeans, layout = c(1,2), type = "l")
 ```
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+![plot of chunk unnamed-chunk-5](figure/interval2.png) 
